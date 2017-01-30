@@ -18,6 +18,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
+            buildConfigField "String", "BASE_URL", '"http://creating-solutions.net/StoreApi/v1/"'
+
+            buildConfigField "String", "URL_LOGIN", '"login/"'
+            buildConfigField "String", "URL_REGISTER", '"register/"'
+
             buildConfigField "boolean", "IS_DEBUG", "false"
         }
 
