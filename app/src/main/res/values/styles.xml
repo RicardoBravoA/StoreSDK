@@ -27,4 +27,9 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="RegisterTextview">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
 </resources>

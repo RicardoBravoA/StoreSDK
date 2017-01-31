@@ -51,4 +51,14 @@
         android:text="@string/enter" />
 
 
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/lblRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/RegisterTextview"
+        android:text="@string/register_message"/>
+
+
 </LinearLayout>

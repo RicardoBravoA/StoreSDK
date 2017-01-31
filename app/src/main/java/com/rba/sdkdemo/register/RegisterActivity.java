@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 
 import com.rba.sdkdemo.R;
 import com.rba.sdkdemo.loading.Loading;
@@ -13,6 +14,7 @@ import com.rba.sdkdemo.loading.Loading;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 import pe.com.orbis.storesdk.model.request.RegisterRequest;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterView {
@@ -102,6 +104,34 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView 
     public void hideSurnameError() {
         tilSurname.setErrorEnabled(false);
         tilSurname.setError("");
+    }
+
+    @OnTextChanged(value = R.id.txtEmail, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    void afterEmailInput() {
+        if(!TextUtils.isEmpty(txtEmail.getText().toString())){
+            hideEmailError();
+        }
+    }
+
+    @OnTextChanged(value = R.id.txtPassword, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    void afterPasswordInput() {
+        if(!TextUtils.isEmpty(txtPassword.getText().toString())){
+            hidePasswordError();
+        }
+    }
+
+    @OnTextChanged(value = R.id.txtName, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    void afterNameInput() {
+        if(!TextUtils.isEmpty(txtName.getText().toString())){
+            hideNameError();
+        }
+    }
+
+    @OnTextChanged(value = R.id.txtSurname, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    void afterSurnameInput() {
+        if(!TextUtils.isEmpty(txtSurname.getText().toString())){
+            hideSurnameError();
+        }
     }
 
     @Override

@@ -9,6 +9,7 @@
     <string name="error_email">Ingrse un email válido</string>
     <string name="error_names">Ingrse nombres</string>
     <string name="error_surnames">Ingrse apellidos</string>
+    <string name="register_message"><u>Registrarse</u></string>
     <string name="error_password">Mínimo 6 caracteres</string>
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
