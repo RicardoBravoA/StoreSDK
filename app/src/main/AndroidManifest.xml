@@ -23,7 +23,11 @@
         <activity
             android:name=".list.ListActivity"
             android:label="@string/title_activity_list"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".register.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

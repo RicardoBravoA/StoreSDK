@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">SDKDemo</string>
     <string name="email">Email</string>
+    <string name="names">Nombres</string>
+    <string name="surname">Apellidos</string>
     <string name="password">Password</string>
     <string name="enter">Ingresar</string>
+    <string name="register">Registrar</string>
     <string name="error_email">Ingrse un email válido</string>
+    <string name="error_names">Ingrse nombres</string>
+    <string name="error_surnames">Ingrse apellidos</string>
     <string name="error_password">Mínimo 6 caracteres</string>
     <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>

@@ -16,17 +16,15 @@ public class Util {
     }
 
     public static boolean validEmail(String email){
-        if(validEmailPattern(email.trim())){
-            return true;
-        }
-        return false;
+        return validEmailPattern(email.trim());
     }
 
     public static boolean validPassword(String password) {
-        if(password.length()>5){
-            return true;
-        }
-        return false;
+        return password.length()>5;
+    }
+
+    public static boolean validName(String name) {
+        return name.length()>2;
     }
 
 }
