@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import pe.com.orbis.storesdk.BuildConfig;
+import pe.com.orbis.storesdk.util.Urls;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -28,10 +29,8 @@ public class StoreApiManager {
                     .readTimeout(10, TimeUnit.SECONDS)
                     .build();
 
-            String url = BuildConfig.BASE_URL;
-
             Retrofit client = new Retrofit.Builder()
-                    .baseUrl(url)
+                    .baseUrl(Urls.URL_BASE)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -49,7 +48,7 @@ public class StoreApiManager {
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(logging).build();
 
         return new Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl(Urls.getUrlBase())
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
