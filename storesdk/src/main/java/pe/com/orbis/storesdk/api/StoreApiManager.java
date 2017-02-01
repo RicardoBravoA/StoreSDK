@@ -28,9 +28,10 @@ public class StoreApiManager {
                     .readTimeout(10, TimeUnit.SECONDS)
                     .build();
 
+            String url = BuildConfig.BASE_URL;
 
             Retrofit client = new Retrofit.Builder()
-                    .baseUrl(BuildConfig.BASE_URL)
+                    .baseUrl(url)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
