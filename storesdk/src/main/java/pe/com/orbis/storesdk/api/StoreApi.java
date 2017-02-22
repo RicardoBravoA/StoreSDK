@@ -14,7 +14,6 @@ import retrofit2.http.POST;
  * Created by Ricardo Bravo on 30/01/17.
  */
 
-/** @hide */
 public interface StoreApi {
 
     @Headers("Content-Type: application/json")

@@ -1,18 +1,32 @@
 package pe.com.orbis.storesdk.util;
 
-import pe.com.orbis.storesdk.BuildConfig;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Created by Ricardo Bravo on 1/02/17.
  */
 
-/** @hide */
 public class Urls {
 
-    public static final String URL_BASE = BuildConfig.BASE_URL;
+    /** @hide */
+    public static final String URL_BASE = getUrlBase();
 
     public static String getUrlBase(){
-        return BuildConfig.BASE_URL;
+        String url = "";
+        Properties prop = new Properties();
+        InputStream input;
+
+        try {
+            input = new FileInputStream("gradle.properties");
+            prop.load(input);
+            url = prop.getProperty("BASE_URL");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return  url;
     }
 
 
