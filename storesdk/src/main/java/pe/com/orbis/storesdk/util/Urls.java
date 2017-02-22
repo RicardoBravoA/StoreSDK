@@ -6,6 +6,7 @@ import pe.com.orbis.storesdk.BuildConfig;
  * Created by Ricardo Bravo on 1/02/17.
  */
 
+/** @hide */
 public class Urls {
 
     public static final String URL_BASE = BuildConfig.BASE_URL;

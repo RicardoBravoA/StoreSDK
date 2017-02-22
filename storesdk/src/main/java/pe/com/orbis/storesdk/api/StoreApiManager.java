@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Ricardo Bravo on 30/01/17.
  */
 
+/** @hide */
 public class StoreApiManager {
 
     private static StoreApi storeApi;
