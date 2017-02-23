@@ -6,10 +6,6 @@ package pe.com.orbis.storesdk.model.response;
 
 public class RegisterResponse {
 
-    /**
-     * _meta : {"status":"success","code":"200"}
-     */
-
     private MetaBean _meta;
 
     public MetaBean get_meta() {
@@ -21,10 +17,6 @@ public class RegisterResponse {
     }
 
     public static class MetaBean {
-        /**
-         * status : success
-         * code : 200
-         */
 
         private String status;
         private String code;

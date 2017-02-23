@@ -21,7 +21,12 @@ public class Urls {
     public static String URL_REGISTER = loadUrl().getUrl_register();
 
 
-    @Nullable
+    /**
+     * Load url url entity.
+     *
+     * @return the url entity
+     */
+
     public static UrlEntity loadUrl() {
         String json = null;
         try {

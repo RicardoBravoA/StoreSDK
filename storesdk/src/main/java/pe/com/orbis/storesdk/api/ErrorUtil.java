@@ -14,6 +14,13 @@ import retrofit2.Response;
 
 public class ErrorUtil {
 
+    /**
+     * Error parsed
+     *
+     * @param response retrofit response
+     * @return the error parsed
+     */
+
     public static ErrorResponse parseError(Response<?> response) {
 
         Converter<ResponseBody, ErrorResponse> converter = StoreApiManager.getRetrofit()

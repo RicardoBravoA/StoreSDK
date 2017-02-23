@@ -16,6 +16,13 @@ import retrofit2.Response;
 
 public class LoginService {
 
+    /**
+     * Login.
+     *
+     * @param loginRequest the login request
+     * @param callback     the callback
+     */
+
     public static void login(LoginRequest loginRequest, final LoginCallback callback){
 
         Call<LoginResponse> call = StoreApiManager.apiManager().login(Urls.URL_LOGIN, loginRequest);

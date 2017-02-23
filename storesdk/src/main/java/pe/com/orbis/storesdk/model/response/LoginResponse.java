@@ -6,10 +6,6 @@ package pe.com.orbis.storesdk.model.response;
 
 public class LoginResponse {
 
-    /**
-     * data : {"user_id":1,"name":"Ricardo","surname":"Bravo","email":"ricardo@test.pe"}
-     */
-
     private DataBean data;
 
     public DataBean getData() {
@@ -21,12 +17,6 @@ public class LoginResponse {
     }
 
     public static class DataBean {
-        /**
-         * user_id : 1
-         * name : Ricardo
-         * surname : Bravo
-         * email : ricardo@test.pe
-         */
 
         private int user_id;
         private String name;

@@ -6,11 +6,6 @@ package pe.com.orbis.storesdk.model.response;
 
 public class ErrorResponse {
 
-
-    /**
-     * _meta : {"status":"error","code":"100","message":"No existe información"}
-     */
-
     private MetaBean _meta;
 
     public MetaBean get_meta() {
@@ -22,11 +17,6 @@ public class ErrorResponse {
     }
 
     public static class MetaBean {
-        /**
-         * status : error
-         * code : 100
-         * message : No existe información
-         */
 
         private String status;
         private String code;

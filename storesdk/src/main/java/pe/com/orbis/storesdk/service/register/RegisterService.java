@@ -16,6 +16,13 @@ import retrofit2.Response;
 
 public class RegisterService {
 
+    /**
+     * Register.
+     *
+     * @param registerRequest the register request
+     * @param callback        the callback
+     */
+
     public static void register(RegisterRequest registerRequest, final RegisterCallback callback){
 
         Call<RegisterResponse> call = StoreApiManager.apiManager().register(

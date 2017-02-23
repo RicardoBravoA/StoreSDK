@@ -6,12 +6,6 @@ package pe.com.orbis.storesdk.model.request;
 
 public class LoginRequest {
 
-
-    /**
-     * email : ricardo@test.pe
-     * password : 123456
-     */
-
     private String email;
     private String password;
 

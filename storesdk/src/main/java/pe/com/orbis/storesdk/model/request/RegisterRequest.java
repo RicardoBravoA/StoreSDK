@@ -6,13 +6,6 @@ package pe.com.orbis.storesdk.model.request;
 
 public class RegisterRequest {
 
-    /**
-     * name : Ricardo
-     * surname : Bravo
-     * email : ricardo@test.pe
-     * password : 123456
-     */
-
     private String name;
     private String surname;
     private String email;

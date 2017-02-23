@@ -16,6 +16,12 @@ public class StoreApiManager {
 
     private static StoreApi storeApi;
 
+    /**
+     * Api manager store api.
+     *
+     * @return the store api
+     */
+
     public static StoreApi apiManager() {
 
         if(storeApi == null){
@@ -39,6 +45,12 @@ public class StoreApiManager {
 
         return storeApi;
     }
+
+    /**
+     * Get retrofit retrofit.
+     *
+     * @return the retrofit
+     */
 
     public static Retrofit getRetrofit(){
 

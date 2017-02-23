@@ -16,6 +16,12 @@ public class SDKApplication extends Application {
         SDKApplication.context = getApplicationContext();
     }
 
+    /**
+     * Gets app context.
+     *
+     * @return the app context
+     */
+
     public static Context getAppContext() {
         return SDKApplication.context;
     }
