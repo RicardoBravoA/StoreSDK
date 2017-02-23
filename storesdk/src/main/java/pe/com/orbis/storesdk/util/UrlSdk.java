@@ -9,7 +9,7 @@ public class UrlSdk {
 
     public static String getUrl(){
         Urls urls = new Urls();
-        return  urls.URL_BASE;
+        return  "";
     }
 
 }

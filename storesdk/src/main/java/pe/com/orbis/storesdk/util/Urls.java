@@ -1,9 +1,9 @@
 package pe.com.orbis.storesdk.util;
 
+import android.content.Context;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.Properties;
 
 /**
  * Created by Ricardo Bravo on 1/02/17.
@@ -11,51 +11,25 @@ import java.util.Properties;
 
 public class Urls {
 
-    public final String URL_BASE = getUrlBase();
+    //public static final String URL_BASE = getUrlBase(Context context);
 
-    public String getUrlBase(){
+    public static String getUrlBase(Context context){
         String url = "";
-        /*
-        Properties prop = new Properties();
+
         InputStream input;
-
         try {
-            input = new FileInputStream("gradle.properties");
-            prop.load(input);
-            url = prop.getProperty("BASE_URL");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        */
+            input = context.getAssets().open("key.txt");
 
-        Properties prop = new Properties();
-        InputStream input = null;
+            int size = input.available();
+            byte[] buffer = new byte[size];
+            input.read(buffer);
+            input.close();
 
-        try{
-            String filename = "gradle.properties";
-            input = getClass().getClassLoader().getResourceAsStream(filename);
-            prop.load(input);
+            url = new String(buffer);
 
-            Enumeration<?> e = prop.propertyNames();
-            while (e.hasMoreElements()) {
-                String key = (String) e.nextElement();
-                String value = prop.getProperty(key);
-
-                if(key.equals("BASE_URL")){
-                    url = value;
-                }
-            }
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            url = "";
         }
 
 

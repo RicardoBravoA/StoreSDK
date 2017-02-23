@@ -1,5 +1,7 @@
 package pe.com.orbis.storesdk.service.login;
 
+import android.content.Context;
+
 import pe.com.orbis.storesdk.api.ErrorUtil;
 import pe.com.orbis.storesdk.api.StoreApiManager;
 import pe.com.orbis.storesdk.model.request.LoginRequest;
@@ -15,16 +17,16 @@ import retrofit2.Response;
 
 public class LoginService {
 
-    public static void login(LoginRequest loginRequest, final LoginCallback callback){
+    public static void login(final Context context, LoginRequest loginRequest, final LoginCallback callback){
 
-        Call<LoginResponse> call = StoreApiManager.apiManager().login(loginRequest);
+        Call<LoginResponse> call = StoreApiManager.apiManager(context).login(loginRequest);
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(response.isSuccessful()){
                     callback.onLoginResponse(response.body());
                 }else{
-                    callback.onLoginError(ErrorUtil.parseError(response));
+                    callback.onLoginError(ErrorUtil.parseError(context, response));
                 }
             }
 
