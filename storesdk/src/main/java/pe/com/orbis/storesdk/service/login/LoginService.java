@@ -18,7 +18,7 @@ public class LoginService {
 
     public static void login(LoginRequest loginRequest, final LoginCallback callback){
 
-        Call<LoginResponse> call = StoreApiManager.apiManager().login(Urls.URL_REGISTER, loginRequest);
+        Call<LoginResponse> call = StoreApiManager.apiManager().login(Urls.URL_LOGIN, loginRequest);
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

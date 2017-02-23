@@ -8,7 +8,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
-        versionName "1.1.1"
+        versionName "1.1.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -18,19 +18,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "BASE_URL", BASE_URL
-
-            buildConfigField "String", "URL_LOGIN", '"login/"'
-            buildConfigField "String", "URL_REGISTER", '"register/"'
-
             buildConfigField "boolean", "IS_DEBUG", "false"
         }
 
         debug {
-            buildConfigField "String", "BASE_URL", BASE_URL
-
-            buildConfigField "String", "URL_LOGIN", '"login/"'
-            buildConfigField "String", "URL_REGISTER", '"register/"'
 
             buildConfigField "boolean", "IS_DEBUG", "true"
         }
