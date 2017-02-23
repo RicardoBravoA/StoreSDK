@@ -1,7 +1,5 @@
 package pe.com.orbis.storesdk.api;
 
-import android.content.Context;
-
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 
@@ -16,9 +14,9 @@ import retrofit2.Response;
 
 public class ErrorUtil {
 
-    public static ErrorResponse parseError(Context context, Response<?> response) {
+    public static ErrorResponse parseError(Response<?> response) {
 
-        Converter<ResponseBody, ErrorResponse> converter = StoreApiManager.getRetrofit(context)
+        Converter<ResponseBody, ErrorResponse> converter = StoreApiManager.getRetrofit()
                 .responseBodyConverter(ErrorResponse.class,
                         new Annotation[0]);
 

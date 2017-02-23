@@ -1,12 +1,11 @@
 package pe.com.orbis.storesdk.service.register;
 
-import android.content.Context;
-
 import pe.com.orbis.storesdk.api.ErrorUtil;
 import pe.com.orbis.storesdk.api.StoreApiManager;
 import pe.com.orbis.storesdk.model.request.RegisterRequest;
 import pe.com.orbis.storesdk.model.response.ErrorResponse;
 import pe.com.orbis.storesdk.model.response.RegisterResponse;
+import pe.com.orbis.storesdk.util.Urls;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,16 +16,17 @@ import retrofit2.Response;
 
 public class RegisterService {
 
-    public static void register(final Context context, RegisterRequest registerRequest, final RegisterCallback callback){
+    public static void register(RegisterRequest registerRequest, final RegisterCallback callback){
 
-        Call<RegisterResponse> call = StoreApiManager.apiManager(context).register(registerRequest);
+        Call<RegisterResponse> call = StoreApiManager.apiManager().register(
+                Urls.URL_REGISTER, registerRequest);
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if(response.isSuccessful()){
                     callback.onRegisterResponse(response.body());
                 }else{
-                    callback.onRegisterError(ErrorUtil.parseError(context, response));
+                    callback.onRegisterError(ErrorUtil.parseError(response));
                 }
             }
 

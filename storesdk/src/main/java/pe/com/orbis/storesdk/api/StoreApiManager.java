@@ -1,13 +1,9 @@
 package pe.com.orbis.storesdk.api;
 
-import android.content.Context;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import pe.com.orbis.storesdk.BuildConfig;
-import pe.com.orbis.storesdk.util.UrlSdk;
 import pe.com.orbis.storesdk.util.Urls;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -20,8 +16,7 @@ public class StoreApiManager {
 
     private static StoreApi storeApi;
 
-    /**  @hide */
-    public static StoreApi apiManager(Context context) {
+    public static StoreApi apiManager() {
 
         if(storeApi == null){
 
@@ -34,7 +29,7 @@ public class StoreApiManager {
                     .build();
 
             Retrofit client = new Retrofit.Builder()
-                    .baseUrl(Urls.getUrlBase(context))
+                    .baseUrl(Urls.loadUrl().getUrl_base())
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -45,14 +40,14 @@ public class StoreApiManager {
         return storeApi;
     }
 
-    public static Retrofit getRetrofit(Context context){
+    public static Retrofit getRetrofit(){
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(logging).build();
 
         return new Retrofit.Builder()
-                .baseUrl(Urls.getUrlBase(context))
+                .baseUrl(Urls.loadUrl().getUrl_base())
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

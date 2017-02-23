@@ -1,9 +1,14 @@
 package pe.com.orbis.storesdk.util;
 
-import android.content.Context;
+import android.support.annotation.Nullable;
+
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+import pe.com.orbis.storesdk.app.SDKApplication;
+import pe.com.orbis.storesdk.model.entity.UrlEntity;
 
 /**
  * Created by Ricardo Bravo on 1/02/17.
@@ -11,30 +16,25 @@ import java.io.InputStream;
 
 public class Urls {
 
-    //public static final String URL_BASE = getUrlBase(Context context);
+    public static String URL_BASE = loadUrl().getUrl_base();
+    public static String URL_LOGIN = loadUrl().getUrl_login();
+    public static String URL_REGISTER = loadUrl().getUrl_register();
 
-    public static String getUrlBase(Context context){
-        String url = "";
 
-        InputStream input;
+    @Nullable
+    public static UrlEntity loadUrl() {
+        String json = null;
         try {
-            input = context.getAssets().open("key.txt");
-
-            int size = input.available();
+            InputStream is = SDKApplication.getAppContext().getAssets().open("data.json");
+            int size = is.available();
             byte[] buffer = new byte[size];
-            input.read(buffer);
-            input.close();
-
-            url = new String(buffer);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            url = "";
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-
-
-        return  url;
+        return new Gson().fromJson(json, UrlEntity.class);
     }
-
 
 }

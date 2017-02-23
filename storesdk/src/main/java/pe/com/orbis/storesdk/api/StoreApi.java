@@ -1,6 +1,5 @@
 package pe.com.orbis.storesdk.api;
 
-import pe.com.orbis.storesdk.BuildConfig;
 import pe.com.orbis.storesdk.model.request.LoginRequest;
 import pe.com.orbis.storesdk.model.request.RegisterRequest;
 import pe.com.orbis.storesdk.model.response.LoginResponse;
@@ -9,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 /**
  * Created by Ricardo Bravo on 30/01/17.
@@ -17,11 +17,11 @@ import retrofit2.http.POST;
 public interface StoreApi {
 
     @Headers("Content-Type: application/json")
-    @POST(BuildConfig.URL_LOGIN)
-    Call<LoginResponse> login(@Body LoginRequest loginRequest);
+    @POST
+    Call<LoginResponse> login(@Url String url, @Body LoginRequest loginRequest);
 
     @Headers("Content-Type: application/json")
-    @POST(BuildConfig.URL_REGISTER)
-    Call<RegisterResponse> register(@Body RegisterRequest registerRequest);
+    @POST
+    Call<RegisterResponse> register(@Url String url, @Body RegisterRequest registerRequest);
 
 }
