@@ -32,7 +32,7 @@ public class Urls {
         InputStream input = null;
 
         try{
-            String filename = "config.properties";
+            String filename = "gradle.properties";
             input = getClass().getClassLoader().getResourceAsStream(filename);
             prop.load(input);
 
