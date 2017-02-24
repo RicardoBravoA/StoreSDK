@@ -1,7 +1,5 @@
 package pe.com.orbis.storesdk.util;
 
-import android.support.annotation.Nullable;
-
 import com.google.gson.Gson;
 
 import java.io.IOException;

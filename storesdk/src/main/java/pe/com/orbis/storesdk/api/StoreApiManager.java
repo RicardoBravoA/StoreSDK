@@ -35,7 +35,7 @@ public class StoreApiManager {
                     .build();
 
             Retrofit client = new Retrofit.Builder()
-                    .baseUrl(Urls.loadUrl().getUrl_base())
+                    .baseUrl(Urls.URL_BASE)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
