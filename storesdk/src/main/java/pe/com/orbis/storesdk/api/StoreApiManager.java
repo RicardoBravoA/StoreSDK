@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import pe.com.orbis.storesdk.BuildConfig;
 import pe.com.orbis.storesdk.util.Urls;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,7 +28,12 @@ public class StoreApiManager {
         if(storeApi == null){
 
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            logging.setLevel(HttpLoggingInterceptor.Level.NONE);
+
+            if(BuildConfig.IS_DEBUG){
+                logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            }
+
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .addInterceptor(logging)
                     .connectTimeout(10, TimeUnit.SECONDS)
