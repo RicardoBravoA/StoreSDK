@@ -1,5 +1,7 @@
 package pe.com.orbis.storesdk.service.register;
 
+import android.util.Log;
+
 import pe.com.orbis.storesdk.api.ErrorUtil;
 import pe.com.orbis.storesdk.api.StoreApiManager;
 import pe.com.orbis.storesdk.model.request.RegisterRequest;
@@ -22,7 +24,6 @@ public class RegisterService {
      * @param registerRequest the register request
      * @param callback        the callback
      */
-
     public static void register(RegisterRequest registerRequest, final RegisterCallback callback){
 
         Call<RegisterResponse> call = StoreApiManager.apiManager().register(
@@ -36,7 +37,6 @@ public class RegisterService {
                     callback.onRegisterError(ErrorUtil.parseError(response));
                 }
             }
-
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 ErrorResponse errorResponse = new ErrorResponse();
