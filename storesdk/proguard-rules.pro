@@ -19,5 +19,5 @@
 # -keep class pe.com.orbis.storesdk.api.** { *; }
 
 -keep class pe.com.orbis.storesdk.util {public *;}
--keep class pe.com.orbis.storesdk.service.login {public *;}
--keep class pe.com.orbis.storesdk.service.register {public *;}
+-keep class pe.com.orbis.storesdk.service.login.LoginService {public *;}
+-keep class pe.com.orbis.storesdk.service.register.RegisterService {public *;}
