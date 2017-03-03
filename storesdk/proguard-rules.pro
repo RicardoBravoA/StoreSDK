@@ -16,6 +16,7 @@
 -dontwarn okio.**
 
 -keep class pe.com.orbis.storesdk.service.** { *; }
+# -keep class pe.com.orbis.storesdk.api.** { *; }
 
 -keep class pe.com.orbis.storesdk.util {public *;}
-
+-keep class pe.com.orbis.storesdk.api {public *;}
