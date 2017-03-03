@@ -9,10 +9,13 @@
 # Retain declared checked exceptions for use by a Proxy instance.
 -keepattributes Exceptions
 
--keep class pe.com.orbis.storesdk.model.** { *; }
+-keep class pe.com.orbis.storesdk.model.entity.** { *; }
+-keep class pe.com.orbis.storesdk.model.request.** { *; }
+-keep class pe.com.orbis.storesdk.model.response.** { *; }
 
 -dontwarn okio.**
 
--keep class pe.com.orbis.storesdk.service {public *;}
--keep class pe.com.orbis.storesdk.util {private *;}
+-keep class pe.com.orbis.storesdk.service.** { *; }
+
+-keep class pe.com.orbis.storesdk.util {public *;}
 
