@@ -25,7 +25,7 @@ public class LoginServiceImpl {
         this.callback = callback;
     }
 
-    private boolean getLogin(){
+    public boolean getLogin(){
         return login(loginRequest, callback);
     }
 

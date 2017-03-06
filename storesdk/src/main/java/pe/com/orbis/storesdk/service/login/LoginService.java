@@ -17,7 +17,8 @@ public class LoginService {
      */
 
     public static void login(LoginRequest loginRequest, final LoginCallback callback){
-        LoginServiceImpl.login(loginRequest, callback);
+        LoginServiceImpl loginService = new LoginServiceImpl(loginRequest, callback);
+        loginService.getLogin();
     }
 
 }
