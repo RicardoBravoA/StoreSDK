@@ -16,7 +16,7 @@
 -keep class pe.com.orbis.storesdk.util {public *;}
 # -keep class pe.com.orbis.storesdk.impl {public *;}
 
--keep class pe.com.orbis.storesdk.service.impl.LoginServiceImpl { public protected <methods>; }
+# -keep class pe.com.orbis.storesdk.service.impl.LoginServiceImpl { public protected <methods>; }
 
 -keep public class pe.com.orbis.storesdk.service.impl.LoginServiceImpl {
     public static void login();
