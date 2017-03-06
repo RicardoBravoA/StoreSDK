@@ -23,8 +23,8 @@
 }
 
 
--keep class pe.com.orbis.storesdk.service.login.* { *; }
--keep class pe.com.orbis.storesdk.service.register.* { *; }
+-keep class pe.com.orbis.storesdk.service.login.** { *; }
+-keep class pe.com.orbis.storesdk.service.register.** { *; }
 # -keep class pe.com.orbis.storesdk.api.** { *; }
 
 # -keep class pe.com.orbis.storesdk.service.register.RegisterService {public *;}

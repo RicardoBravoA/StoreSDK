@@ -17,7 +17,19 @@ import retrofit2.Response;
 
 public class LoginServiceImpl {
 
-    public static void login(LoginRequest loginRequest, final LoginCallback callback){
+    private LoginRequest loginRequest;
+    private LoginCallback callback;
+
+    public LoginServiceImpl(LoginRequest loginRequest, LoginCallback callback){
+        this.loginRequest = loginRequest;
+        this.callback = callback;
+    }
+
+    private boolean getLogin(){
+        return login(loginRequest, callback);
+    }
+
+    private boolean login(LoginRequest loginRequest, final LoginCallback callback){
         Call<LoginResponse> call = StoreApiManager.apiManager().login(Urls.URL_LOGIN, loginRequest);
         call.enqueue(new Callback<LoginResponse>() {
             @Override
@@ -40,6 +52,8 @@ public class LoginServiceImpl {
                 callback.onLoginError(errorResponse);
             }
         });
+
+        return false;
     }
 
 }
