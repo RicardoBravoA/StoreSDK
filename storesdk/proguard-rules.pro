@@ -11,15 +11,13 @@
 
 -dontwarn okio.**
 
--keep class pe.com.orbis.storesdk.model.entity.** { *; }
--keep class pe.com.orbis.storesdk.model.request.** { *; }
--keep class pe.com.orbis.storesdk.model.response.** { *; }
+-keep class pe.com.orbis.storesdk.model.** { *; }
 
 -keep class pe.com.orbis.storesdk.service.** { *; }
 # -keep class pe.com.orbis.storesdk.api.** { *; }
 
 -keep class pe.com.orbis.storesdk.util {public *;}
--keep class pe.com.orbis.storesdk.service.login.LoginServiceImpl {public *;}
--keep class pe.com.orbis.storesdk.service.register.RegisterService {public *;}
--keep class pe.com.orbis.storesdk.api.StoreApi {public *;}
--keep class pe.com.orbis.storesdk.api.StoreApiManager {public *;}
+-keep class pe.com.orbis.storesdk.impl {public *;}
+# -keep class pe.com.orbis.storesdk.service.register.RegisterService {public *;}
+# -keep class pe.com.orbis.storesdk.api.StoreApi {public *;}
+#-keep class pe.com.orbis.storesdk.api.StoreApiManager {public *;}

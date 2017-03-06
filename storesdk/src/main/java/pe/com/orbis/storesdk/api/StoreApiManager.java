@@ -61,7 +61,11 @@ public class StoreApiManager {
     public static Retrofit getRetrofit(){
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        logging.setLevel(HttpLoggingInterceptor.Level.NONE);
+
+        if(BuildConfig.IS_DEBUG){
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        }
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(logging).build();
 
         return new Retrofit.Builder()
