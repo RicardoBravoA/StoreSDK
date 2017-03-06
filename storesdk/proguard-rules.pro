@@ -23,10 +23,6 @@
 }
 
 
--keepclassmembers class pe.com.orbis.storesdk.service.impl.LoginServiceImpl {
-  !public !protected !private *;
-}
-
 -keep class pe.com.orbis.storesdk.service.login.* { *; }
 -keep class pe.com.orbis.storesdk.service.register.* { *; }
 # -keep class pe.com.orbis.storesdk.api.** { *; }
